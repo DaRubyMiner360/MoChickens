@@ -2,7 +2,7 @@
 	"format_version": "1.12.0",
 	"minecraft:item": {
 		"description": {
-			"identifier": "template:example_food"
+			"identifier": "mochickens:rainbow_apple"
 		},
 		"components": {
 			"minecraft:max_stack_size": 64,
