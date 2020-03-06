@@ -10,6 +10,7 @@
                     "name": "minecraft:iron_ingot",
                     "name": "minecraft:gold_ingot",
                     "name": "minecraft:emerald",
+                    "name": "minecraft:lapis_ore",
                     "weight": 1,
                     "functions": [
                         {
