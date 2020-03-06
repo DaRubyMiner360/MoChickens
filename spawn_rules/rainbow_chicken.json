@@ -2,7 +2,7 @@
   "format_version": "1.8.0",
   "minecraft:spawn_rules": {
     "description": {
-      "identifier": "effect:diamond_chicken",
+      "identifier": "effect:rainbow_chicken",
       "population_control": "animal"
     },
     "conditions": [
