@@ -2,14 +2,14 @@
   "format_version": "1.8.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "effect:diamond_chicken",
+      "identifier": "effect:rainbow_chicken",
       "runtime_identifier": "minecraft:chicken",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false
     },
     "component_groups": {
-      "minecraft:diamond_chicken_baby": {
+      "minecraft:rainbow_chicken_baby": {
         "minecraft:is_baby": {
         },
         "minecraft:scale": {
@@ -33,13 +33,13 @@
 
       "minecraft:diamond_chicken_adult": {
         "minecraft:loot": {
-          "table": "loot_tables/entities/diamond_chicken.json"
+          "table": "loot_tables/entities/rainbow_chicken.json"
         },
         "minecraft:breedable": {
           "requireTame": false,
           "breedsWith": {
-            "mateType": "effect:diamond_chicken",
-            "babyType": "effect:diamond_chicken",
+            "mateType": "effect:rainbow_chicken",
+            "babyType": "effect:rainbow_chicken",
             "breed_event": {
               "event": "minecraft:entity_born",
               "target": "baby"
@@ -66,11 +66,11 @@
           "min_wait_time": 300,
           "max_wait_time": 600,
           "spawn_sound": "plop",
-          "spawn_item": "diamond"
+          "spawn_item": "rainbow_ingot
         }
       },
 
-      "minecraft:diamond_chicken_leashed": {
+      "minecraft:rainbow_chicken_leashed": {
         "minecraft:behavior.move_towards_restriction": {
           "priority": 2,
           "speed_multiplier": 1.0
