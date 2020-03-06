@@ -6,6 +6,10 @@
                 {
                     "type": "item",
                     "name": "minecraft:diamond",
+                    "name": "minecraft:redstone",
+                    "name": "minecraft:iron_ingot",
+                    "name": "minecraft:gold_ingot",
+                    "name": "minecraft:emerald",
                     "weight": 1,
                     "functions": [
                         {
