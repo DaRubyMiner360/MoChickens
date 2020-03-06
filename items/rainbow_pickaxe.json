@@ -2,7 +2,7 @@
 	"format_version": "1.12.0",
 	"minecraft:item": {
 		"description": {
-			"identifier": "template:example_tool"
+			"identifier": "mochickens:rainbow_pickaxe"
 		},
 		"components": {
 			"minecraft:use_duration": 1,
