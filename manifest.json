@@ -1,16 +1,16 @@
 {
     "format_version": 1,
     "header": {
-        "description": "By Effect99",
-        "name": "§lMinerals_Chickens",
-        "uuid": "8ebf2d6b-3c3c-4ae6-bc21-1415134563b1",
+        "description": "By DaRubyMiner360",
+        "name": "§lMoChickens",
+        "uuid": "8ebf2d6b-3c3c-4ae6-bc21-1415134563b2",
         "version": [1, 0, 0]
     },
     "modules": [
         {
-            "description": "By Effect99",
+            "description": "By DaRubyMiner360",
             "type": "data",
-            "uuid": "bb08e35a-2c9c-3a3c-a9b9-fc4efa9865ac",
+            "uuid": "bb08e35a-2c9c-3a3c-a9b9-fc4efa9865ad",
             "version": [1, 0, 0]
         }
     ]
