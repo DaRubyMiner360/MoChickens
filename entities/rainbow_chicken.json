@@ -66,7 +66,13 @@
           "min_wait_time": 300,
           "max_wait_time": 600,
           "spawn_sound": "plop",
-          "spawn_item": "rainbow_ingot
+          "spawn_item": "rainbow_ingot",
+	  "spawn_item": "diamond",
+	  "spawn_item": "iron_ingot",
+	  "spawn_item": "gold_ingot",
+	  "spawn_item": "emerald",
+	  "spawn_item": "lapis_ore",
+	  "spawn_item": "redstone",
         }
       },
 
@@ -146,7 +152,7 @@
         "priority": 4,
         "speed_multiplier": 1.0,
         "items": [
-          "diamond"
+          "rainbow_ingot"
         ]
       },
       "minecraft:behavior.random_stroll": {
@@ -167,7 +173,7 @@
 
     "events": {
       "from_egg": {
-        "add": { "component_groups": [ "minecraft:diamond_chicken_baby" ] }
+        "add": { "component_groups": [ "minecraft:rainbow_chicken_baby" ] }
       },
       
       "minecraft:entity_spawned": {
@@ -178,7 +184,7 @@
             },
             "add": {
               "component_groups": [
-                "minecraft:diamond_chicken_adult"
+                "minecraft:rainbow_chicken_adult"
               ]
             }
           },
@@ -188,7 +194,7 @@
             },
             "add": {
               "component_groups": [
-                "minecraft:diamond_chicken_baby"
+                "minecraft:rainbow_chicken_baby"
               ]
 
             }
@@ -201,7 +207,7 @@
         },
         "add": {
           "component_groups": [
-            "minecraft:diamond_chicken_baby"
+            "minecraft:rainbow_chicken_baby"
           ]
         }
       },
@@ -209,12 +215,12 @@
       "minecraft:ageable_grow_up": {
         "remove": {
           "component_groups": [
-            "minecraft:diamond_chicken_baby"
+            "minecraft:rainbow:chicken_baby"
           ]
         },
         "add": {
           "component_groups": [
-            "minecraft:diamond_chicken_adult"
+            "minecraft:rainbow_chicken_adult"
           ]
         }
       },
@@ -222,14 +228,14 @@
       "minecraft:on_leash": {
         "add": {
           "component_groups": [
-            "minecraft:diamond_chicken_leashed"
+            "minecraft:rainbow_chicken_leashed"
           ]
         }
       },
       "minecraft:on_unleash": {
         "remove": {
           "component_groups": [
-            "minecraft:diamond_chicken_leashed"
+            "minecraft:rainbow_chicken_leashed"
           ]
         }
       }
