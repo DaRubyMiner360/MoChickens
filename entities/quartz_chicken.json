@@ -1,0 +1,289 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "effect:quartz_chicken",
+      "runtime_identifier": "minecraft:chicken",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:quartz_chicken_baby": {
+        "minecraft:is_baby": {
+        },
+        "minecraft:scale": {
+          "value":0.5
+        },
+        "minecraft:ageable": {
+          "duration": 1200,
+          "feedItems": [
+            "quartz"
+          ],
+          "grow_up": {
+            "event": "minecraft:ageable_grow_up",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.follow_parent": {
+          "priority": 5,
+          "speed_multiplier": 1.1
+        }
+      },
+
+      "minecraft:quartz_chicken_adult": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/quartz_chicken.json"
+        },
+        "minecraft:breedable": {
+          "requireTame": false,
+          "breedsWith": {
+            "mateType": "effect:quartz_chicken",
+            "babyType": "effect:quartz_chicken",
+            "breed_event": {
+              "event": "minecraft:entity_born",
+              "target": "baby"
+            }
+          },
+          "breedItems": [
+            "quartz"
+          ]
+        },
+        "minecraft:behavior.breed": {
+          "priority": 3,
+          "speed_multiplier": 1.0
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "zombie"
+          ],
+          "seats": {
+            "position": [ 0.0, 0.4, 0.0 ]
+          }
+        },
+        "minecraft:spawn_entity": {
+          "min_wait_time": 300,
+          "max_wait_time": 600,
+          "spawn_sound": "plop",
+          "spawn_item": "quartz"
+        }
+      },
+
+      "minecraft:quartz_chicken_leashed": {
+        "minecraft:behavior.move_towards_restriction": {
+          "priority": 2,
+          "speed_multiplier": 1.0
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "chicken_aggressive" ]
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:burns_in_daylight": false,
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+        "minecraft:collision_box": {
+            "width": 0.6,
+            "height": 0.8
+        },
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 4,
+        "max": 4
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
+      },
+      "minecraft:attack": {
+        "damage": 2
+      },
+      "minecraft:leashable": {
+        "soft_distance": 4.0,
+        "hard_distance": 6.0,
+        "max_distance": 10.0,
+        "on_leash": {
+          "event": "minecraft:on_leash",
+          "target": "self"
+        },
+        "on_unleash": {
+          "event": "minecraft:on_unleash",
+          "target": "self"
+        }
+      },
+      "minecraft:balloonable": {
+        "mass": 0.6
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:movement.basic": {
+        
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.mount_pathing": {
+        "priority": 2,
+        "speed_multiplier": 1.5,
+        "target_dist": 0.0,
+        "track_target": true
+      },
+      "minecraft:behavior.tempt": {
+        "priority": 4,
+        "speed_multiplier": 1.0,
+        "items": [
+          "quartz"
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1.0
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 4,
+        "target_dist": 1.2,
+        "speed_multiplier": 1.25,
+        "track_target": true
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "chicken"
+            },
+            "max_dist": 16
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "chicken"
+            },
+            "max_dist": 16
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
+              ]
+            },
+            "max_dist": 16
+          }
+        ],
+        "must_see": true
+      },
+	  "minecraft:physics": {
+      }
+    },
+
+    "events": {
+      "from_egg": {
+        "add": { "component_groups": [ "minecraft:quartz_chicken_baby" ] }
+      },
+      
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 95,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:quartz_chicken_adult"
+              ]
+            }
+          },
+          {
+            "weight": 5,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:quartz_chicken_baby"
+              ]
+
+            }
+          }
+        ]
+      },
+
+      "minecraft:entity_born": {
+        "remove": {
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:quartz_chicken_baby"
+          ]
+        }
+      },
+
+      "minecraft:ageable_grow_up": {
+        "remove": {
+          "component_groups": [
+            "minecraft:quartz_chicken_baby"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:quartz_chicken_adult"
+          ]
+        }
+      },
+
+      "minecraft:on_leash": {
+        "add": {
+          "component_groups": [
+            "minecraft:quartz_chicken_leashed"
+          ]
+        }
+      },
+      "minecraft:on_unleash": {
+        "remove": {
+          "component_groups": [
+            "minecraft:quartz_chicken_leashed"
+          ]
+        }
+      }
+    }
+  }
+}
